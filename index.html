@@ -124,7 +124,7 @@ function update() {
 
         player.animations.play('left');
     }
-    else if (cursors.right.isDown)
+    if (cursors.right.isDown)
     {
         //  Move to the right
         player.body.velocity.x = 150;
