@@ -81,11 +81,10 @@ function create() {
     player.body.collideWorldBounds = true;
 
 
-    player.anchor.setTo(.5, .5); 
     //  Our two animations, walking left and right.
-    player.animations.add('left', [2, 3], 5, true);
+    player.animations.add('left', [0, 1], 5, true);
 
-	player.animations.add('right', [0,1], 5, true);
+	player.animations.add('right', [2,3], 5, true);
 
     //  Finally some mice to collect
     mice = game.add.group();
