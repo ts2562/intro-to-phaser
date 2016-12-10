@@ -82,9 +82,9 @@ function create() {
 
 
     //  Our two animations, walking left and right.
-    player.animations.add('left', [0, 1], 4, true);
+    player.animations.add('left', [0, 1], 3, true);
 
-	player.animations.add('right', [2, 3], 4, true);
+	player.animations.add('right', [2, 3], 3, true);
 
     //  Finally some mice to collect
     mice = game.add.group();
@@ -144,7 +144,7 @@ function update() {
     {
         //  Stand still
         player.animations.stop();
-        /*
+        
         if(playerRight == true)
         {
         player.frame = 3;
@@ -154,8 +154,8 @@ function update() {
         {
         player.frame = 0;
     	}
-    	*/
-    	player.frame = 4;
+    	
+    	//player.frame = 4;
     }
     
     //  Allow the player to jump if they are touching the ground.
