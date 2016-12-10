@@ -34,7 +34,7 @@ var mice;
 var score = 0;
 var scoreText;
 
-var player2;
+//var player2;
 
 function create() {
 
@@ -67,9 +67,9 @@ function create() {
     ledge.body.immovable = true;
 
     // The player and its settings
-    player = game.add.sprite(32, game.world.height - 150, 'rick');
+    //player = game.add.sprite(32, game.world.height - 150, 'rick');
 
-    player2 = game.add.sprite(32, game.world.height - 150, 'p1')
+    player = game.add.sprite(32, game.world.height - 150, 'p1');
 
     //  We need to enable physics on the player
     game.physics.arcade.enable(player);
@@ -81,19 +81,7 @@ function create() {
 
     //  Our two animations, walking left and right.
     player.animations.add('left', [0, 1], 5, true);
-	player.animations.add('right', [3, 4], 5, true);
-
-	 //  We need to enable physics on the player
-    game.physics.arcade.enable(player2);
-
-    //  Player physics properties. Give the little guy a slight bounce.
-    player2.body.bounce.y = 0.2;
-    playe2r.body.gravity.y = 400;
-    player2.body.collideWorldBounds = true;
-
-    //  Our two animations, walking left and right.
-    player2.animations.add('left', [0, 1], 5, true);
-	//player2.animations.add('right', [3, 4], 5, true);
+	//player.animations.add('right', [3, 4], 5, true);
 
     //  Finally some mice to collect
     mice = game.add.group();
@@ -137,16 +125,16 @@ function update() {
     if (cursors.left.isDown)
     {
         //  Move to the left
-        player2.body.velocity.x = -420;
+        player.body.velocity.x = -420;
 
-        player2.animations.play('left');
+        player.animations.play('left');
     }
     else if (cursors.right.isDown)
     {
         //  Move to the right
-        player2.body.velocity.x = 420;
-        player2.anchor.setTo(.5,1);
-        player2.animations.play('right');
+        player.body.velocity.x = 420;
+
+        player.animations.play('left');
     }
     else
     {
